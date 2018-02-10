@@ -86,19 +86,15 @@
        (update _d "volume" js/parseFloat)))))
 
 
-(GET "http://rrag.github.io/react-stockcharts/data/MSFT.tsv"
+(defn main! []
+  (GET "http://rrag.github.io/react-stockcharts/data/MSFT.tsv"
     {:params {}
      :handler #(let [data (tsvParse % (parse-data parseDate))]
                  (render-chart data))
-     :error-handler #(js/console.log (str "ERROR: " %))})
+     :error-handler #(js/console.log (str "ERROR: " %))}))
 
 
-(defn main! []
-  (println "[main]: loading"))
-
-
-(defn reload! []
-  (println "[main] reload"))
+#_(defn reload! [] (do something as needed))
 
 
 (main!)

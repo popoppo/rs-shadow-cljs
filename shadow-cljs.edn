@@ -2,7 +2,7 @@
  :dependencies [[reagent "0.8.0-alpha2"]
                 [cljs-ajax "0.7.3"]]
  :http {:port 3449}
- :nrepl {:port 52939}
+ :nrepl {:port 7888}
  :builds {:app {:output-dir "resources/public/"
                 :asset-path "."
                 :target :browser
@@ -10,5 +10,5 @@
                 :devtools {:after-load app.main/reload!
 ;;                           :http-root "resources/public/"
 ;;                           :http-resource-root "resources/public/js"
-                           :http-host "172.17.0.2"
+                           :http-host "127.0.0.1"
                            :http-port 8080}}}}
